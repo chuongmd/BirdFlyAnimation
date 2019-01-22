@@ -12,7 +12,14 @@
 		724B5AE121F6C44D00373282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724B5ADF21F6C44D00373282 /* Main.storyboard */; };
 		724B5AE321F6C45800373282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AE221F6C45800373282 /* Assets.xcassets */; };
 		724B5AE621F6C45800373282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AE421F6C45800373282 /* LaunchScreen.storyboard */; };
-		724B5AEE21F6C4BC00373282 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724B5AED21F6C4BC00373282 /* SecondController.swift */; };
+		724B5AF821F6C5DF00373282 /* BackgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AF021F6C5DE00373282 /* BackgroundMusic.mp3 */; };
+		724B5AF921F6C5DF00373282 /* BackgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AF121F6C5DE00373282 /* BackgroundImage.jpg */; };
+		724B5AFA21F6C5DF00373282 /* bird4.png in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AF221F6C5DE00373282 /* bird4.png */; };
+		724B5AFB21F6C5DF00373282 /* bird3.png in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AF321F6C5DE00373282 /* bird3.png */; };
+		724B5AFC21F6C5DF00373282 /* bird2.png in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AF421F6C5DE00373282 /* bird2.png */; };
+		724B5AFD21F6C5DF00373282 /* bird0.png in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AF521F6C5DF00373282 /* bird0.png */; };
+		724B5AFE21F6C5DF00373282 /* bird1.png in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AF621F6C5DF00373282 /* bird1.png */; };
+		724B5AFF21F6C5DF00373282 /* bird5.png in Resources */ = {isa = PBXBuildFile; fileRef = 724B5AF721F6C5DF00373282 /* bird5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +30,14 @@
 		724B5AE221F6C45800373282 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		724B5AE521F6C45800373282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		724B5AE721F6C45800373282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		724B5AED21F6C4BC00373282 /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
+		724B5AF021F6C5DE00373282 /* BackgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackgroundMusic.mp3; sourceTree = "<group>"; };
+		724B5AF121F6C5DE00373282 /* BackgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackgroundImage.jpg; sourceTree = "<group>"; };
+		724B5AF221F6C5DE00373282 /* bird4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird4.png; sourceTree = "<group>"; };
+		724B5AF321F6C5DE00373282 /* bird3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird3.png; sourceTree = "<group>"; };
+		724B5AF421F6C5DE00373282 /* bird2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird2.png; sourceTree = "<group>"; };
+		724B5AF521F6C5DF00373282 /* bird0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird0.png; sourceTree = "<group>"; };
+		724B5AF621F6C5DF00373282 /* bird1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird1.png; sourceTree = "<group>"; };
+		724B5AF721F6C5DF00373282 /* bird5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird5.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,30 @@
 		724B5ADA21F6C44D00373282 /* BirdFlyAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				724B5AEF21F6C5CB00373282 /* Resource */,
 				724B5ADB21F6C44D00373282 /* AppDelegate.swift */,
 				724B5ADD21F6C44D00373282 /* HomeController.swift */,
-				724B5AED21F6C4BC00373282 /* SecondController.swift */,
 				724B5ADF21F6C44D00373282 /* Main.storyboard */,
 				724B5AE221F6C45800373282 /* Assets.xcassets */,
 				724B5AE421F6C45800373282 /* LaunchScreen.storyboard */,
 				724B5AE721F6C45800373282 /* Info.plist */,
 			);
 			path = BirdFlyAnimation;
+			sourceTree = "<group>";
+		};
+		724B5AEF21F6C5CB00373282 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				724B5AF021F6C5DE00373282 /* BackgroundMusic.mp3 */,
+				724B5AF521F6C5DF00373282 /* bird0.png */,
+				724B5AF621F6C5DF00373282 /* bird1.png */,
+				724B5AF421F6C5DE00373282 /* bird2.png */,
+				724B5AF321F6C5DE00373282 /* bird3.png */,
+				724B5AF221F6C5DE00373282 /* bird4.png */,
+				724B5AF721F6C5DF00373282 /* bird5.png */,
+				724B5AF121F6C5DE00373282 /* BackgroundImage.jpg */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +154,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724B5AFE21F6C5DF00373282 /* bird1.png in Resources */,
 				724B5AE621F6C45800373282 /* LaunchScreen.storyboard in Resources */,
+				724B5AFF21F6C5DF00373282 /* bird5.png in Resources */,
 				724B5AE321F6C45800373282 /* Assets.xcassets in Resources */,
+				724B5AFD21F6C5DF00373282 /* bird0.png in Resources */,
+				724B5AF821F6C5DF00373282 /* BackgroundMusic.mp3 in Resources */,
 				724B5AE121F6C44D00373282 /* Main.storyboard in Resources */,
+				724B5AF921F6C5DF00373282 /* BackgroundImage.jpg in Resources */,
+				724B5AFB21F6C5DF00373282 /* bird3.png in Resources */,
+				724B5AFA21F6C5DF00373282 /* bird4.png in Resources */,
+				724B5AFC21F6C5DF00373282 /* bird2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +175,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				724B5AEE21F6C4BC00373282 /* SecondController.swift in Sources */,
 				724B5ADE21F6C44D00373282 /* HomeController.swift in Sources */,
 				724B5ADC21F6C44D00373282 /* AppDelegate.swift in Sources */,
 			);
