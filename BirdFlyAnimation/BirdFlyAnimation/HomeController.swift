@@ -10,28 +10,30 @@ import UIKit
 
 class HomeController: UIViewController {
     
-    // chú ý biến khi khởi tạo bird, phải dùng var để frame của chim có thể thay đổi từ trên xuống dưới.
+    // chú ý biến khi khởi tạo bird, phải dùng var để frame của chim có thể thay đổi từ trên xuống dưới
     private var bird = UIImageView()
-    
+    private var birdewidth: CGFloat = 0.0
+    private var birdheight: CGFloat = 0.0
     override func viewDidLoad()
     {
         super.viewDidLoad()
         setupUI()
         addBird()
-        flyUpAndDown()
+        fly()
     }
     
     private func setupUI()
     {
-        let background = UIImageView(image: UIImage(named: "BackgroundImage.jpg"))
-        background.frame = self.view.bounds;
-        background.contentMode = .scaleAspectFill
-        self.view.addSubview(background)
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        
+        backgroundImage.image = UIImage(named: "BackgroundImage.jpg")
+        backgroundImage.contentMode = .scaleAspectFill
+        self.view.addSubview(backgroundImage)
     }
     
     private func addBird()
     {
-        bird = UIImageView(frame: CGRect(x: 10, y: 30, width: 110, height: 68))
+        bird = UIImageView(frame: CGRect(x: 30, y: 30, width: 110, height: 68))
         bird.animationImages = [UIImage(named:"bird0.png")!,
                                 UIImage(named:"bird1.png")!,
                                 UIImage(named:"bird2.png")!,
@@ -44,20 +46,29 @@ class HomeController: UIViewController {
         bird.startAnimating()
     }
     
-    private func flyUpAndDown()
+    private func birdMove(duration : TimeInterval, x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat, rotation: CGFloat, callback: @escaping ()->())
     {
-        UIView.animate(withDuration: 10, animations: {
-            self.bird.center = CGPoint(x: self.view.bounds.size.width - 10, y: self.view.bounds.size.height - 30)
+        UIView.animate(withDuration: 5, animations: {
+            self.bird.center = CGPoint(x: x, y: y)
         }, completion: { (finished) in
-            self.bird.transform = self.bird.transform.scaledBy(x: -1, y: 1).concatenating(CGAffineTransform(rotationAngle: 45))
-            UIView.animate(withDuration: 5, animations: {
-                self.bird.center = CGPoint(x: 10, y: -30)
-            }, completion: { (finished) in
-                self.bird.transform = CGAffineTransform.identity
-                self.flyUpAndDown()
-            })
+            self.bird.transform = .identity
+            self.bird.transform = CGAffineTransform(scaleX: scaleX, y: scaleY).concatenating(CGAffineTransform(rotationAngle: rotation))
+            callback()
         })
     }
     
-    
+    private func fly() {
+        let width = self.view.bounds.size.width
+        let height = self.view.bounds.size.height
+        
+        birdMove(duration: 5, x: width-50, y: height-34, scaleX: -1, scaleY: 1, rotation: 0) {
+            self.birdMove(duration: 5, x: 50, y: height-34, scaleX: -1, scaleY: -1, rotation: 90, callback: {
+                self.birdMove(duration: 5, x: width-50, y: 34, scaleX: -1, scaleY: 1, rotation: 0, callback: {
+                    self.birdMove(duration: 5, x: 30, y: 30, scaleX: 1, scaleY: 1, rotation: 0, callback: {
+                        self.fly()
+                    })
+                })
+            })
+        }
+    }
 }
