@@ -8,7 +8,8 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: UIViewController
+{
     
     // chú ý biến khi khởi tạo bird, phải dùng var để frame của chim có thể thay đổi từ trên xuống dưới
     private var bird = UIImageView()
@@ -48,27 +49,35 @@ class HomeController: UIViewController {
     
     private func birdMove(duration : TimeInterval, x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat, rotation: CGFloat, callback: @escaping ()->())
     {
-        UIView.animate(withDuration: 5, animations: {
+        UIView.animate(withDuration: 5, animations:
+            {
             self.bird.center = CGPoint(x: x, y: y)
-        }, completion: { (finished) in
+            }, completion:
+            { (finished) in
             self.bird.transform = .identity
             self.bird.transform = CGAffineTransform(scaleX: scaleX, y: scaleY).concatenating(CGAffineTransform(rotationAngle: rotation))
             callback()
-        })
+            })
     }
     
-    private func fly() {
+    private func fly()
+    {
         let width = self.view.bounds.size.width
         let height = self.view.bounds.size.height
-        
-        birdMove(duration: 5, x: width-50, y: height-34, scaleX: -1, scaleY: 1, rotation: 0) {
-            self.birdMove(duration: 5, x: 50, y: height-34, scaleX: -1, scaleY: -1, rotation: 90, callback: {
-                self.birdMove(duration: 5, x: width-50, y: 34, scaleX: -1, scaleY: 1, rotation: 0, callback: {
-                    self.birdMove(duration: 5, x: 30, y: 30, scaleX: 1, scaleY: 1, rotation: 0, callback: {
-                        self.fly()
-                    })
+        print(bird.frame)
+        birdMove(duration: 5, x: width-50, y: height-34, scaleX: -1, scaleY: 1, rotation: 0)
+        {
+            self.birdMove(duration: 5, x: 50, y: height-34, scaleX: -1, scaleY: -1, rotation: 90, callback:
+                {
+                    self.birdMove(duration: 5, x: width-50, y: 34, scaleX: -1, scaleY: 1, rotation: 0, callback:
+                        {
+                            self.birdMove(duration: 5, x: 30, y: 30, scaleX: 1, scaleY: 1, rotation: 0, callback:
+                                {
+                                    self.fly()
+                                })
+                        })
                 })
-            })
+            print(self.bird.frame)
         }
     }
 }
